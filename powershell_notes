@@ -76,8 +76,18 @@ COMPARISON
 -like
 -notlike
 -match
+  > $matches
+    # this is a table that contains the matched strings and can be referenced by index
 -notmatch
-
+-or
+-and
+/> if else
+  > -eq
+  > -ne
+  > -ge
+  > -gt
+  > -le
+  > -lt
 
 
 
