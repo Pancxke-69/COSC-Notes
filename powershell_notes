@@ -71,6 +71,17 @@ $array | %{Get-Alias $_}
   # takes the 2nd character like the one above it and adds a space 7 times and then 6 '=' 
 /> 1..5 | ForEach-Object {$_+1}
 
+COMPARISON
+----------
+-like
+-notlike
+-match
+-notmatch
+
+
+
+
+
 
 
 
