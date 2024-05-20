@@ -1,0 +1,33 @@
+RDP:
+xfreerdp /u:student /v:10.50.38.121 -dynamic-resolution +glyph-cache +clipboard
+Handbook:
+https://cted.cybbh.io/tech-college/pns/public/pns/latest/guides/ps_sg.html
+
+                                            Day 1
+/> Get-Help [*Command]
+  - Examples
+  - Detailed
+  - ComputerName
+/> Get-Process
+
+SCRIPTING
+-----------------
+  !IMPORTANT Variables
+  >> $true
+  >> $false
+  >> $_ (pipeline variable)
+  >> $Matches
+  >> $Input
+
+!TYPCASTING
+  >> [string]
+  >> [int]
+  >> [float]
+  >> [array]
+!METHODS
+  >> .GetType()
+  >> .Name (Doesnt print a table, just prints type !!!USEFUL)
+    > ([string]$false + 'hello world').GetType().Name | Get-Member
+  >> Find
+  >> Running
+  >> Variables
