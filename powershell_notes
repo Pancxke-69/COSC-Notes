@@ -107,6 +107,34 @@ foreach($fish in $BB){
   }
 }
 
+/> -split
+  > foreach($oct in ('8.8.8.8' -split '\.')){
+      if ([int]$oct -lt 0 -or [int]$oct -gt 255){
+          "$oct is a valid octet"
+      }else{"$oct is a valid octet"}
+    }
+/> -join
+  > 'cat','dog' -join " "
+  > .startswith('c')
+  > .endswith('t')
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
