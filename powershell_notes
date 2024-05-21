@@ -25,6 +25,7 @@ SCRIPTING
   >> [int]
   >> [float]
   >> [array]
+    > empty array $array = @()
 !METHODS
   >> .GetType()
   >> .Name (Doesnt print a table, just prints type !!!USEFUL)
