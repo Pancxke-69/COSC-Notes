@@ -107,6 +107,11 @@ foreach($fish in $BB){
     "$fish is a fine citizen"
   }
 }
+/> Get-Content
+  # reading files
+/> Add-Content
+  # writing to files
+
 
 /> -split
   > foreach($oct in ('8.8.8.8' -split '\.')){
@@ -119,8 +124,33 @@ foreach($fish in $BB){
   > .startswith('c')
   > .endswith('t')
 
+/> functions 
+  # elements provided on the pipeline
+  > function Cool-Printer {process{$_}}
+    1,2,3,4,5 | Cool-Printer
+      PRINTS: 1,2,3,4,5 on newlines
+  > function Get-Sum {begin{$sum = 0}process{$sum += $_}end{$sum}}
+    1,2,3,4,5 | Get-Sum
+  > Get-Process | Where-Object {$_.name -like "*ms*"} | Select ProcessName, Id, WS
+    # this gets running processes that have 'ms' in the name
 
+  > function Print-Input{$sum = 0
+    foreach($num in $input){
+        $num
+        $sum += $num
+    }
+        $sum
+    }
+    function Print-PSitem{...}
+    
 
+/> do / until
+  > $num = 0
+    do{
+        $num
+        $num ++
+    }while($num -lt 3)
+    # this prints num until its 3
 
 
 
