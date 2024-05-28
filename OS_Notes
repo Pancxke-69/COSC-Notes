@@ -25,3 +25,31 @@ DAY 1
   # starts temporary sessions. It is not a remoting command, and is how everything is done in powershell.
   > -asjob
     # this option can be done if querying a large number of hosts or data to run in the background
+
+CTF
+-----------------
+01 : windows_powershell : start7917 02 : windows_powershell_profiles : start9943 
+COMMAND - SSH-J Student@10.50.21.123 or ssh-j andy.dwyer@10.x.0.3
+
+<<<<<<<REGEX From CTF>>>>>>>>>>
+get-content words.txt | where-object {$_ -imatch "az"} | measure-object
+  # this counts words that have either an 'a' or a 'z' in the word
+get-content words.txt | where-object {$_ -imatch "aa[a-g]"} | measure-object
+  # this counts the words that have 2 'a's and any letter between 'a-g' after the 'a's
+get-content words.txt | where-object {$_ -imatch "gaab"} | measure-object
+  # this counts the words that have 'gaab' in it
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
