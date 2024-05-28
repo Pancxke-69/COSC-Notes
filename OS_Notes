@@ -1,6 +1,7 @@
 OS Book - https://os.cybbh.io/public/os/latest/index.html
 Stack Number - "11"
 Stack IP Address - 10.50.24.52
+USERNAME - JOHU-M-24-503
 VTY - http://10.50.22.197:8000
 RDP COMMAND - xfreerdp /u:student /v:10.50.24.52 -dynamic-resolution +glyph-cache +clipboard
 RDP PASSWD - password
@@ -38,7 +39,7 @@ get-content words.txt | where-object {$_ -imatch "aa[a-g]"} | measure-object
   # this counts the words that have 2 'a's and any letter between 'a-g' after the 'a's
 get-content words.txt | where-object {$_ -imatch "gaab"} | measure-object
   # this counts the words that have 'gaab' in it
-
+do {Expand-Archive -Path C:\Users\CTF\Documents\Omega$a.zip -DestinationPath C:\Users\CTF\Documents; $a-=1} until($a -eq 1)
 
 
 
