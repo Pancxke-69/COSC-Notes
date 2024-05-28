@@ -1,0 +1,27 @@
+OS Book - https://os.cybbh.io/public/os/latest/index.html
+Stack Number - "11"
+Stack IP Address - 10.50.24.52
+VTY - http://10.50.22.197:8000
+RDP COMMAND - xfreerdp /u:student /v:10.50.24.52 -dynamic-resolution +glyph-cache +clipboard
+RDP PASSWD - password
+
+DAY 1
+-----------------------------------------------------------
+*POWERSHELL*
+/> Execution-policy 
+  # allows to run scripts based on what the setting is.
+/> $PROFILE 
+  # this is where persistence can be set
+  # supports several profile files and host programs like windows. (Below are the locations of each profile)
+  > $PsHome\Profile.ps1 - All Users, All Hosts
+  > $PsHome\Microsoft.PowerShell_profile.ps1 - All Users, Current Host
+  > $Home\[My]Documents\Profile.ps1 - Current User, All Hosts
+  > $Home\[My ]Documents\WindowsPowerShell\Profile.ps1 - Current User, Current Host
+/> Start-Transcript
+  # this logs commands that have been run
+  > Start-Transcript | out-null
+    # this pipes command history out to null
+/> Invoke-Command
+  # starts temporary sessions. It is not a remoting command, and is how everything is done in powershell.
+  > -asjob
+    # this option can be done if querying a large number of hosts or data to run in the background
