@@ -60,9 +60,35 @@ $PROFILE | Format-List -Force
   Notepad 
       to read the profile confs
 
+DAY 2
+------------------------------------
+HKEY_LOCAL_MACHINE (HKLM)
+  # Hardware, Sam, Security, System
+HKEY_USERS (HKU)
+  # Contains environement settings, Shortcuts, and File Associations
+HKEY_CURRENT_USERS (HKCU)
+  # symbolic link of logged in users. (SID) 
+HKEY_CURRENT_CONFIG (HKCC)
+  # symbolic link to the current configurations
+HKEY_CLASSES_ROOT (HKCR)
+  # Contains file extension assocations
 
+/> Get-PSDrive
+  # Creates new powershell drive. Needs Name, PSProvider, and the Root
+/> Get-ChildItem Env:
+  # this shows all environemental variables
 
+*** Drives are called by the preceding ':' ***
+/> cd HKU:
 
+CTF
+-----------------
+05 : windows_registry : start6223 06 : windows_alternate_data_stream : start2133 
+Get-Item lists subkeys within a reg key
+
+SPECIAL CODE
+---------
+get-wmiobject win32_useraccount | select name, sid
 
 
 
