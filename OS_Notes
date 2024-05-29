@@ -41,7 +41,24 @@ get-content words.txt | where-object {$_ -imatch "gaab"} | measure-object
   # this counts the words that have 'gaab' in it
 do {Expand-Archive -Path C:\Users\CTF\Documents\Omega$a.zip -DestinationPath C:\Users\CTF\Documents; $a-=1} until($a -eq 1)
 
+<<<<<<<<<Profile Stuff>>>>>>>>>>>>>
+Test-Path -Path $profile.currentUsercurrentHost
+  #if true -> path exitst#>
+Test-Path -Path $profile.allusersallhosts
+  #if true -> path exists
+$Home
+  -> Home directory path
+$Profile
+  -> current user, current host
+#get-help about_profiles
+#get-content <path of profile>
 
+$PROFILE | Format-List -Force
+  #get all profiles on machine
+  get-content
+  #or
+  Notepad 
+      to read the profile confs
 
 
 
