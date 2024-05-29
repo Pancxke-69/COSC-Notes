@@ -73,6 +73,11 @@ HKEY_CURRENT_CONFIG (HKCC)
 HKEY_CLASSES_ROOT (HKCR)
   # Contains file extension assocations
 
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\NetworkList\Profiles
+  # this is the wireless network reg location
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\ProfileList
+  # this is the profilelist reg key
+
 /> Get-PSDrive
   # Creates new powershell drive. Needs Name, PSProvider, and the Root
 /> Get-ChildItem Env:
@@ -91,6 +96,7 @@ SPECIAL CODE
 get-wmiobject win32_useraccount | select name, sid
 gci -path C:\ -hidden -recurse -ErrorAction SilentlyContinue | Where-Object {$_.name -like "fort"}
 dir /b /s C:\*fortune*
+gcio -force
 
 ADS
 -----------
