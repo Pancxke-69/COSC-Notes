@@ -89,7 +89,13 @@ Get-Item lists subkeys within a reg key
 SPECIAL CODE
 ---------
 get-wmiobject win32_useraccount | select name, sid
+gci -path C:\ -hidden -recurse -ErrorAction SilentlyContinue | Where-Object {$_.name -like "fort"}
+dir /b /s C:\*fortune*
 
+ADS
+-----------
+get-item -Stream *
+Get-Content .\nothing_here -Stream hidden
 
 
 
