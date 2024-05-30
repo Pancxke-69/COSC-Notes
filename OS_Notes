@@ -144,6 +144,9 @@ CTF
 --------------
 Flag = start8543
 
+CODE
+-----------
+openssl enc -d -aes-128-cbc -salt -in cipher -out decrypted -k AES128Key
 
 
 
