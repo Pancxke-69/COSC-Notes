@@ -93,15 +93,72 @@ Get-Item lists subkeys within a reg key
 
 SPECIAL CODE
 ---------
-get-wmiobject win32_useraccount | select name, sid
-gci -path C:\ -hidden -recurse -ErrorAction SilentlyContinue | Where-Object {$_.name -like "fort"}
-dir /b /s C:\*fortune*
-gcio -force
+/> get-wmiobject win32_useraccount | select name, sid
+/> gci -path C:\ -hidden -recurse -ErrorAction SilentlyContinue | Where-Object {$_.name -like "fort"}
+/> dir /b /s C:\*fortune*
+/> gcio -force
+  # this is the powershell command for dir /a:h
 
 ADS
 -----------
-get-item -Stream *
-Get-Content .\nothing_here -Stream hidden
+/> get-item -Stream *
+/> Get-Content .\nothing_here -Stream hidden
+/> dir /R
+  # This lists any ads that is in a directory
+/> dir /R <stream_name>
+  # this shows specific ads
+
+DAY 3
+------------------------------------
+**Main Linux Directories**
+  /Root
+  /OPT
+  /SRV
+  /TMP
+  /PROC
+  /ETC
+  /SBIN
+  /MNT
+  /VAR
+
+**Permissions**
+  FILES
+  -> read
+  -> write
+  -> execute
+  DIRECORIES
+  -> read
+    # for directories, this does not mean you (cant) read whats inside the directory
+  -> write
+    # for directories, this does not mean you (cant) write whats to the directory
+Sticky Bit
+  # this is the permission to delete the file with the sticky bit set
+
+  1    2    3
+> rwx|rwx|rwx
+  > 1 (User)
+  > 2 (Group)
+  > 3 (Other)
+
+CTF
+--------------
+Flag = start8543
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
