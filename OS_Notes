@@ -159,7 +159,9 @@ cat numbers | egrep -v '\.' | egrep -c '^([0-9A-Za-z]{2}[:-]){5}([0-9A-Za-z]{2})
 awk 'NR >= 420 && NR <= 1337 {print $0}' numbers | sha512sum
   # this finds lines between 420 and 1337 and hashes them
 
-
+DAY 4
+---------
+cat numbers | grep -E '^([0-9A-Fa-f][26AEae48cC0])([:-]([0-9A-Fa-f]{2})){5}$' | wc -l
 
 
 
