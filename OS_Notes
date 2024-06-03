@@ -200,6 +200,10 @@ Target.unit want and requires dependencies search locations
 > /lib/systemd/system/*
 > /run/systemd/generator/*
 
+The kernel is loaded with the command linux. The file /boot/vmlinuz-4.15.0-76-generic contains the Linux Kernel
+
+graphical.target is symbolically linked to default target
+
 CODE
 -----------------
 dd if=/home/bombadil/mbroken skip=446 bs=1 count=16 | md5sum
