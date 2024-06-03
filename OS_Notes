@@ -204,8 +204,12 @@ CODE
 -----------------
 dd if=/home/bombadil/mbroken skip=446 bs=1 count=16 | md5sum
   # this reads hex from file and and starts at 446 bytes and counts by 16 (locates the first partition)
+dd if=/home/bombadil/mbroken skip=392 bs=1 count=4 of=bruh
+  # this skips to 392 and counts 4 bytes and redirects to a file
+xxd -l <#bytes> <filename>
 
-
+systemctl show -p Wants graphical.target
+  # this shows the wants of a given unit
 
 
 
