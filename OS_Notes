@@ -163,7 +163,47 @@ DAY 4
 ---------
 cat numbers | grep -E '^([0-9A-Fa-f][26AEae48cC0])([:-]([0-9A-Fa-f]{2})){5}$' | wc -l
 
+DAY 5
+--------------
+Check for persistence in:
+> sysv init
+> systemd init
 
+XXD:
+  # gives hex dump of MBR
+  # 0xeb63 is the start of the hardrive
+!Make a copy of the MBR to avoid irriversable mistakes!
+
+GRUB(Grand Unified Bootloader) has one purpose - to load the Linux Kernel a user choses from a location in the hard drive.
+  On Bios Systems using MBR:
+  > Stage 1: boot.img
+  > Stage 1.5: core.img
+  > Stage 2: /boot/grub/i386-pc/normal.mod
+
+  On Bios Systems using MBR:
+  > Stage 1: rubx64.efi
+  > Stage 2: /boot/grub/x86_64-efi/normal.mod
+
+Init Run Levels: (Located in etc/inittab)
+> 0: Halt
+> 1: Single User
+> 2: Multiuser
+> 3: Multiuser with Networking
+> 4: Not used/user definable
+> 5: Multiuser with Networking (GUI) Desktop
+> 6: Reboot
+
+
+
+Target.unit want and requires dependencies search locations
+> /etc/systemd/system/*
+> /lib/systemd/system/*
+> /run/systemd/generator/*
+
+CODE
+-----------------
+dd if=/home/bombadil/mbroken skip=446 bs=1 count=16 | md5sum
+  # this reads hex from file and and starts at 446 bytes and counts by 16 (locates the first partition)
 
 
 
