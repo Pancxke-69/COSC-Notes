@@ -214,13 +214,26 @@ xxd -l <#bytes> <filename>
 
 systemctl show -p Wants graphical.target
   # this shows the wants of a given unit
+find / -name <filename> -type f
+
+DAY 6
+-----------------
+/> tasklist /svc
+  # this lists services
+/> tasklist /m /fi "ImageName" eq chrome | more
+  # this lists tasks that have the image name of chrome
+
+UAC Color Codes
+    > Red - Application or publisher blocked by group policy
+    > Blue & gold - Administrative application
+    > Blue - Trusted and Authenticode signed application
+    > Yellow - Unsigned or signed but not trusted application
 
 
-
-
-
-
-
+netsh advfirewall show allprofiles
+  # this is searching for firewall profiles and the options
+sc query state= all
+  # this lists process that are dead and alive
 
 
 
