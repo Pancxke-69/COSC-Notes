@@ -253,6 +253,10 @@ ps -elf --forest | grep bombadil
   # this lists who the parent is of each process
 sudo lsof -n -P
   # this lists descriptors and makes it fast
+/> locate <file>
+  # OP as shit. Locates any file on a system
+/> grep -HiRl
+  # this searches for a string in any directory
 
 DAY 8
 -------------
