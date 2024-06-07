@@ -281,6 +281,8 @@ DAY 8
   # this gets bam
 /> get-eventlog -logname <log_name> | fl * | findstr /i flag
   # this searches through logs for a string
+/> systemctl list-timers
+  # this lists all timers in systemctl (persistence)
 
 %SystemRoot%\System32\Winevt\Logs\Security.evtx 
   # this is where windows logs things on shutdown
