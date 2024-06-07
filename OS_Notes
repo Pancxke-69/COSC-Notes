@@ -288,9 +288,16 @@ DAY 8
   # this is where windows logs things on shutdown
 
 
+DAY 9
+-----------------
+Logging Daemons
+  Syslog
+    - /etc/rsyslog
+  Journald
 
-
-
+CODE
+-----------
+/> jq '.["id.orig_h"]' conn.log  | sort -u
 
 
 
