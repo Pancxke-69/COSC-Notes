@@ -298,7 +298,9 @@ Logging Daemons
 CODE
 -----------
 /> jq '.["id.orig_h"]' conn.log  | sort -u
-
+  # this reads a json file and sorts the value of id.origin_h by unique
+/> jq 'select(.resp_bytes >= 40)' conn.log | grep resp_bytes | wc -l
+  # this reads a json file and counts the number of connections that sent more than 40 bytes
 
 
 
