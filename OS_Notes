@@ -303,6 +303,130 @@ CODE
   # this reads a json file and counts the number of connections that sent more than 40 bytes
 
 
+DAY 10
+--------------
+/> .\volatility_2.6_win64_standalone.exe -f "<file>" <command>
+  # this shows the offset of certain commands
+/> .\volatility_2.6_win64_standalone.exe -f ".\cridex.vmem" --profile=WinXPSP2x86 procdump -p 1640 -D
+  # this is how you dump the executable running as a process, possibly to hash the executable
+/> .\volatility_2.6_win64_standalone.exe -f ".\cridex.vmem" --profile=WinXPSP2x86 memdump -p 1640 -D .
+  # this dumps memory resident pages in a given process, in this case process 1640
+/> .\volatility_2.6_win64_standalone.exe -f ".\0zapftis.vmem" --profile=WinXPSP2x86 cmdscan
+  # this lists commands that were run by a profile
+
+Active Directories are broken into:
+  Domains
+  Trees
+  Forests
+/> Get-Command -Module activedirectory
+  # this searches for commands for specified module
+/> Get-ADDefaultDomainPasswordPolicy
+  # account lockout policies
+/> Get-ADFineGrainedPasswordPolicy -Filter {name -like "*"}
+  # searches for specific lockout policies
+/> Get-ADForest
+  # dumps forest details
+/> Get-ADGroup -Filter *
+  # Dumps AD groups
+  /> Get-ADGroup -Identity 'IA Analysts Team'
+    # searches for specific group
+/> Get-ADUser -Filter 'Name -like "*"'
+  # dumps AD user
+/> Get-ADUser -Identity 'Nina.Webster' -Properties Description
+  # verboses AD user's stuff
+/> get-aduser -filter {Enabled -eq "FALSE"} -properties name, enabled
+  # finds disabled users
+/> Enable-ADAccount -Identity guest
+  # this will enable a disabled account
+/> Set-AdAccountPassword -Identity guest -NewPassword (ConvertTo-SecureString -AsPlaintext -String "PassWord12345!!" -Force)
+  # this sets a password for a user
+/> Get-ADuser -filter * | select distinguishedname, name
+  # Get Distinguished Name to match AD format
+/> New-ADUser -Name "Bad.Guy" -AccountPassword (ConvertTo-SecureString -AsPlaintext -String "PassWord12345!!" -Force) -path "OU=3RD PLT,OU=CCO,OU=3RDBN,OU=WARRIORS,DC=army,DC=warriors"
+  # create new user
+/> Enable-ADAccount -Identity "Bad.Guy"
+  # enables account
+/> Disable-AdAccount -Identity Guest
+  # disables account
+/> Add-ADGroupMember -Identity "Domain Admins" -Members "Bad.Guy"
+  # adds user to admin group
+/> Remove-ADUser -Identity "Bad.Guy"
+  # removes user
+/> Remove-ADGroupMember -Identity "Domain Admins" -Members guest
+  # removes from group
+/> Get-AdGroupMember -identity "Domain Admins" -Recursive | %{Get-ADUser -identity $_.DistinguishedName}
+  # Get All Domain Admin Accounts
+/> Get-AdGroupMember -identity "Enterprise Admins" -Recursive | %{Get-ADUser -identity $_.DistinguishedName} | select name, Enabled
+  # gets all enterprise admin accounts
+/> (Get-AdGroupMember -Identity 'domain admins').Name
+  # Get Name Property from the Active Directory Group named "Domain Admins"
+/> (Get-AdGroupMember -Identity "System Admins LV1").Name
+  # Get Active Directory Group 'System' Admin Names 'LvL 1'
+/> (Get-AdGroupMember -Identity "System Admins").Name
+  # Get Active Directory Group 'System Admin' Names
+/> (Get-AdGroupMember -Identity "System Admins LV2").Name
+  # Get Active Directory Group 'System' Admin Names 'LVL 2'
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
