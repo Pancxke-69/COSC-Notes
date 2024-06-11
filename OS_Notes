@@ -301,6 +301,8 @@ CODE
   # this reads a json file and sorts the value of id.origin_h by unique
 /> jq 'select(.resp_bytes >= 40)' conn.log | grep resp_bytes | wc -l
   # this reads a json file and counts the number of connections that sent more than 40 bytes
+/> xpath -q -e "//host[ports/port/state[@state='open']]/address/@addr|//host[ports/port/state[@state='open']]/ports/port/@portid" output.xml
+  # This selects the host node and prints the attribute @addr only if the attribute @state is open, and then prints portid only if the state is open
 
 
 DAY 10
@@ -366,7 +368,10 @@ Active Directories are broken into:
   # Get Active Directory Group 'System Admin' Names
 /> (Get-AdGroupMember -Identity "System Admins LV2").Name
   # Get Active Directory Group 'System' Admin Names 'LVL 2'
-
+/> $env:USERDOMAIN
+  # prints the short name of the domain you are in
+/> get-adgroupmember -identity "domain admins"
+  # this gets the users inside of system admins (not subgroups)
 
 
 
