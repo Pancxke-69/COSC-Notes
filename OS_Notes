@@ -5,6 +5,7 @@ USERNAME - JOHU-M-24-503
 VTY - http://10.50.22.197:8000
 RDP COMMAND - xfreerdp /u:student /v:10.50.24.52 -dynamic-resolution +glyph-cache +clipboard
 RDP PASSWD - password
+Sysinternals Download - net use * http://live.sysinternals.com
 
 DAY 1
 -----------------------------------------------------------
