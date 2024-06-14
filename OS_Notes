@@ -376,13 +376,74 @@ Active Directories are broken into:
 
 
 
+REVIEW
+------------------
+!/ETC is a directory for configurations!
+If something is a scheduled task, it will survive a reboot.
 
+Systemd perstence
+  /sbin/init
+SysV persistence
+  /etc/init
 
-
-
-
-
-
+Sysinternals tools
+  Procmon
+  Autorun - keys, tasks (most useful)
+Permissions Linux
+  Execute in a directory - You can move into it
+    If no permission set, then you cant go into it (cd <file>)
+    Still interact with it with ls.
+    SUID - The owner of the file, rather than the user running it
+    GUID - The group that has access to the file.
+    Sticky bit - is usually for shared directories. If I set the sticky bit on a directory, I am the only one that can delete it.
+Zombie
+  defunct process is a process that has completed execution
+Orphan
+  Gets addopted by int
+Daemon
+  Services
+  Background processes
+  It uses them as a method of persistence
+  /> systemctl status
+Linux Logging - /var/log, /etc/rsyslog.conf
+Powershell Profiles
+  Current User, Current Host
+  Current User, All Hosts
+  All users, Current Host
+  All Users, All Host
+$HOME - user's home path {/home/<user>
+Windows Registry
+  HKLM - contains system startup information
+  HKCU - Current User, symbolically linked to HKU
+  HKCC - stores current hardware profile
+  HKCR - contains registered application information
+Things to Look For:
+  Mispelled file names that shouldnt be mispelled
+  Something that should be a system level process, but has a high ppid
+  Seeing multiple names for a process that should only be there once
+  High PIDs for processes that shoulds be low
+Format for the test:
+  Something happened to the computer system.
+  Check logs
+  Check for services, processes
+  Check Powershell profiles for persistence (run through each one)
+  Check the run keys
+  Sysinternals tools
+    use autorun
+    use process explorer
+  Check alternate data streams (refer to notes)
+  Check services (can run executables)
+  Check for scheduled tasks
+  Linux boot
+    Check the run levels
+      /etc/inittab
+      Check default runlevel
+    Check Bash profiles
+      Bashrc
+      Bash_profile
+    Systemd
+    Sysv
+    
 
 
 
